@@ -78,9 +78,9 @@
                         <p class="text-sm text-red-600 font-semibold mb-4">
                             <i class="fas fa-clock mr-2"></i>Only 100 affiliate spots at this commission rate
                         </p>
-                         <a href="#purchase" class="btn-primary text-white font-semibold py-4 px-8 rounded-lg text-center shadow-lg block">
+                         <button class="btn-primary text-white font-semibold py-4 px-8 rounded-lg text-center shadow-lg block scroll-to-purchase">
                             Get Instant Access – £21.90<br><span class="text-sm font-normal">Instant download — start selling today</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
                 <div class="md:w-1/2">
@@ -106,8 +106,6 @@
             </div>
         </div>
     </section>
-
-
 
     <!-- Pain Points Section -->
     <section class="py-16 bg-gray-50">
@@ -291,9 +289,9 @@
                 <p class="text-lg text-gray-700 mb-8 font-semibold">
                     Every week you wait is another week without income. Meanwhile, others are pinning and getting paid.
                 </p>
-                <a href="#purchase" class="btn-primary text-white font-semibold py-4 px-8 rounded-lg text-center shadow-lg inline-block">
+                <button class="btn-primary text-white font-semibold py-4 px-8 rounded-lg text-center shadow-lg inline-block scroll-to-purchase">
                     Get Instant Access – £21.90<br><span class="text-sm font-normal">Instant download — start selling today</span>
-                </a>
+                </button>
             </div>
         </div>
     </section>
@@ -396,7 +394,7 @@
             </h2>
             <p class="text-gray-600 mb-8">
                 </p>
-            <a href="https://pay.hotmart.com/T101256274T" class="btn-primary text-white font-semibold py-4 px-8 rounded-lg text-center shadow-lg inline-block">
+            <a href="https://pay.hotmart.com/T101256274T" class="btn-primary text-white font-semibold py-4 px-8 rounded-lg text-center shadow-lg inline-block" id="purchase-button">
                 Get Instant Access – £21.90<br><span class="text-sm font-normal">Instant download — start selling today</span>
             </a>
         </div>
@@ -447,5 +445,29 @@
             </p>
         </div>
     </footer>
+
+    <!-- JavaScript para o scroll suave -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Seleciona todos os botões com a classe .scroll-to-purchase
+            const scrollButtons = document.querySelectorAll('.scroll-to-purchase');
+            
+            // Seleciona o botão final de compra
+            const purchaseButton = document.getElementById('purchase-button');
+            
+            // Adiciona o evento de clique aos botões
+            scrollButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (purchaseButton) {
+                        purchaseButton.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
